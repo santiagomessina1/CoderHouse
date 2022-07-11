@@ -1,12 +1,20 @@
-// CONTADOR DE 5 EN 5 HASTA EL 50
 
 let numIngresado = parseInt(prompt("Ingrese un numero menor a 50 por favor: "))
 
-
-    for (contador = numIngresado; contador <= 150; contador = contador + 5){
-
-        if(contador != numIngresado){
+function calcular (numIngresado){
+    for (let contador = numIngresado; contador <= 100; contador = contador + 5){
+        console.log(contador)
+        if( numIngresado<50){
             alert(contador)
         }
-      
+        else {
+            alert("Ingresaste incorrectamente el numero")
+            calcular(parseInt(prompt("Ingrese nuevamente un numero menor a 50")))
+        }
     }
+}
+
+alert(calcular(numIngresado))
+
+
+
