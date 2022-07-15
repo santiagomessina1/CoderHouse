@@ -1,20 +1,15 @@
 
-let numIngresado = parseInt(prompt("Ingrese un numero menor a 50 por favor: "))
+const alumnos = [{ dni: 40345901, name: 'Jose Prieto' }, { dni: 34783256, name: 'Mariana Yael' }, {dni: 23476890, name: 'Juana Bruno'}];
 
-function calcular (numIngresado){
-    for (let contador = numIngresado; contador <= 100; contador = contador + 5){
-        console.log(contador)
-        if( numIngresado<50){
-            alert(contador)
-        }
-        else {
-            alert("Ingresaste incorrectamente el numero")
-            calcular(parseInt(prompt("Ingrese nuevamente un numero menor a 50")))
-        }
+function encontrarAlumno(dniAlumnos){
+    const nombreAlumno = alumnos.find(x => x.dni === dniAlumnos);
+    
+    if (nombreAlumno === undefined || nombreAlumno<8){
+        return alert('El DNI no forma parte de nuestro grupo de alumnos.')
     }
-}
+    else{
+        return alert( "Hola " + nombreAlumno.name + " " + "estas en la lista de alumnos!");
+    }
+    }
 
-alert(calcular(numIngresado))
-
-
-
+encontrarAlumno(parseInt(prompt('Por favor ingrese su numero de DNI')));
