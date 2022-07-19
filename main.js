@@ -5,11 +5,16 @@ function encontrarAlumno(dniAlumnos){
     const nombreAlumno = alumnos.find(x => x.dni === dniAlumnos);
     
     if (nombreAlumno === undefined || nombreAlumno<8){
-        return alert('El DNI no forma parte de nuestro grupo de alumnos.')
+        const noLista = alumnos.map((el) => el.name)
+        return alert(" Hola! Esta es nuestra lista de alumnos, si apareces en la lista, pero tu nombre esta mal escrito notificanos! Los alumnos son: " + noLista.join(", ")+".")
     }
     else{
         return alert( "Hola " + nombreAlumno.name + " " + "estas en la lista de alumnos!");
     }
+
+    
     }
 
 encontrarAlumno(parseInt(prompt('Por favor ingrese su numero de DNI')));
+
+
