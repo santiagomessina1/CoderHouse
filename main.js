@@ -1,20 +1,43 @@
 
-const alumnos = [{ dni: 40345901, name: 'Jose Prieto' }, { dni: 34783256, name: 'Mariana Yael' }, {dni: 23476890, name: 'Juana Bruno'}];
-
-function encontrarAlumno(dniAlumnos){
-    const nombreAlumno = alumnos.find(x => x.dni === dniAlumnos);
+function validate(){let name = document.getElementById("name").value;
+    console.log(name);
+    let subject = document.getElementById("subject").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let error_message = document.getElementById("error_message");
     
-    if (nombreAlumno === undefined || nombreAlumno<8){
-        const noLista = alumnos.map((el) => el.name)
-        return alert(" Hola! Esta es nuestra lista de alumnos, si apareces en la lista, pero tu nombre esta mal escrito notificanos! Los alumnos son: " + noLista.join(", ")+".")
-    }
-    else{
-        return alert( "Hola " + nombreAlumno.name + " " + "estas en la lista de alumnos!");
-    }
-
+    error_message.style.padding = "10px";
     
+let text;
+    if(name.length < 5){
+      text = "Por favor ingrese correctamente su nombre y apellido ";
+      error_message.innerHTML = text;
+      return false;
     }
+    if(subject.length < 10){
+      text = "Por favor ingrese correctamente su asunto";
+      error_message.innerHTML = text;
+      return false;
+    }
+    if(isNaN(phone) || phone.length != 10){
+      text = "Por favor ingrese correctamente su telefono";
+      error_message.innerHTML = text;
+      return false;
+    }
+    if(email.indexOf("@") == -1 || email.length < 6){
+      text = "Por favor ingrese correctamente su email";
+      error_message.innerHTML = text;
+      return false;
+    }
+    if(message.length <= 10){
+      text = "Por favor ingrese un mensaje mayor a 10 caracteres";
+      error_message.innerHTML = text;
+      return false;
+    }
+    alert("Formualrio enviado correctamente!");
+    return true;
+  }
 
-encontrarAlumno(parseInt(prompt('Por favor ingrese su numero de DNI')));
 
-
+  
