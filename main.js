@@ -1,43 +1,31 @@
-
-function validate(){let name = document.getElementById("name").value;
-    console.log(name);
-    let subject = document.getElementById("subject").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
-    let error_message = document.getElementById("error_message");
-    
-    error_message.style.padding = "10px";
-    
-let text;
-    if(name.length < 5){
-      text = "Por favor ingrese correctamente su nombre y apellido ";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(subject.length < 10){
-      text = "Por favor ingrese correctamente su asunto";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(isNaN(phone) || phone.length != 10){
-      text = "Por favor ingrese correctamente su telefono";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(email.indexOf("@") == -1 || email.length < 6){
-      text = "Por favor ingrese correctamente su email";
-      error_message.innerHTML = text;
-      return false;
-    }
-    if(message.length <= 10){
-      text = "Por favor ingrese un mensaje mayor a 10 caracteres";
-      error_message.innerHTML = text;
-      return false;
-    }
-    alert("Formualrio enviado correctamente!");
-    return true;
-  }
+var imagen = document.getElementById('imagen')
+let superBlanco = document.getElementById('super-blanco')
+let blancoPerlado = document.getElementById('blanco-perlado')
+let grisPlata = document.getElementById('gris-plata')
+let rojoMetalizado = document.getElementById('rojo-metalizado')
+let negro = document.getElementById('negro')
+let grisOscuro = document.getElementById('gris-oscuro')
+let grisAzulado = document.getElementById('gris-azulado')
 
 
-  
+superBlanco.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/86iJXJ8HG5.png'
+}
+blancoPerlado.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/jRo8ypcAS6.png'
+}
+grisPlata.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/reJNMu85vf.png'
+}
+rojoMetalizado.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/o9kHcia5EH.png'
+}
+negro.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/0PztN3Q4ed.png'
+}
+grisOscuro.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/Q6VgHWFLWS.png'
+}
+grisAzulado.onclick = function(){
+    imagen.src = 'https://www.toyota.com.ar/storage/trim_colors/YYmJkr27fd.png'
+}
